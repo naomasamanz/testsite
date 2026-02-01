@@ -1,73 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>マイページ</title>
+  <script>
+    // 門番コード：ここから
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+      alert('だめだよ！ログインしてね（・∀・）');
+      window.location.href = 'index.html';
+    }
+    // 門番コード：ここまで
+  </script>
+  <title>ログイン成功</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
       text-align: center;
+      padding-top: 100px;
+      background-color: #e3f2fd;
+      font-family: sans-serif;
     }
-    .welcome-container {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      padding: 40px;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-    }
-    h1 { font-size: 3rem; margin-bottom: 10px; }
-    p { font-size: 1.2rem; opacity: 0.9; }
-    
-    .back-btn {
-      margin-top: 30px;
-      padding: 10px 20px;
+    .success-box {
       background: white;
-      color: #764ba2;
+      padding: 40px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 { color: #1976d2; }
+    .btn-home {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #1976d2;
+      color: white;
       border: none;
-      border-radius: 50px;
+      border-radius: 5px;
       cursor: pointer;
-      font-weight: bold;
       text-decoration: none;
       display: inline-block;
-      transition: 0.3s;
-    }
-    .back-btn:hover {
-      transform: scale(1.05);
-      background: #f0f0f0;
     }
   </style>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
-  <div class="welcome-container">
-    <h1>Welcome!</h1>
-    <p>naomasamanz さん、ログインに成功しました。</p>
-    <p id="date-time"></p>
+  <div class="success-box">
+    <h1>ログイン成功！</h1>
+    <p>おめでとうございます！正常に認証されました。</p>
+    <p>ここはログインした人だけが見れる秘密のページです（・∀・）</p>
     
-    <a href="index.html" class="back-btn">ログアウト</a>
+    <a href="index.html" class="btn-home" onclick="logout()">ログアウトして戻る</a>
   </div>
 
   <script>
-    // ログインした時刻を表示するちょっとした演出
-    function updateTime() {
-      const now = new Date();
-      document.getElementById("date-time").innerText = 
-        "ログイン時刻: " + now.toLocaleTimeString();
+    function logout() {
+      // ログアウト時は「証拠」を消す
+      sessionStorage.removeItem('isLoggedIn');
     }
-    updateTime();
   </script>
 
 </body>
