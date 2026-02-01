@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /success.html
+Disallow: /mypage.html
+
+Sitemap: https://testsite-drab.vercel.app/sitemap.xml
