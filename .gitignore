@@ -1,0 +1,14 @@
+# Windowsのシステムが作る不要なファイル
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.sys
+.dll
+
+# Vercelなどのログや一時ファイル
+.vercel
+*.log
+
+# エディタ（VSCodeなど）の設定ファイル
+.vscode/
+.history/
