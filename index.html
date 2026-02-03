@@ -141,6 +141,23 @@
   </div>
 
   <script>
+    // URLの中に「naoma=true」があるかチェック！
+const urlParams = new URLSearchParams(window.location.search);
+const isNaoma = urlParams.get('naoma');
+
+if (isNaoma === 'true') {
+  // もしナオマサさんだったら...
+  console.log("👑 VIP：ナオマサ様を検知しました！");
+  
+  // ログイン画面を隠して、メッセージを出す（例）
+  document.body.innerHTML = `
+    <div style="text-align:center; padding:50px; background: gold;">
+      <h1>👑 VIP ROOM：ナオマサ城 👑</h1>
+      <p>ログインなしで特別入城を許可しました。</p>
+      <button onclick="location.reload()">普通に戻る</button>
+    </div>
+  `;
+}
     function togglePassword() {
       const passInput = document.getElementById("pass");
       const eyeIcon = document.getElementById("eye-icon");
@@ -184,6 +201,7 @@
   </script>
 </body>
 </html>
+
 
 
 
