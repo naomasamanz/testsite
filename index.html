@@ -154,7 +154,10 @@ if (isNaoma === 'true') {
     <div style="text-align:center; padding:50px; background: gold;">
       <h1>👑 VIP ROOM：ナオマサ城 👑</h1>
       <p>ログインなしで特別入城を許可しました。</p>
-      <button onclick="location.location.href=window.location.pathname">普通に戻る</button>
+      // hrefを "/" にすることで、荷札（?naoma=true）を捨ててトップに戻ります
+<a href="/" style="display:inline-block; padding:10px 20px; background:#fff; color:#000; text-decoration:none; border-radius:5px;">
+  普通に戻る
+</a>
     </div>
   `;
 }
@@ -201,6 +204,7 @@ if (isNaoma === 'true') {
   </script>
 </body>
 </html>
+
 
 
 
