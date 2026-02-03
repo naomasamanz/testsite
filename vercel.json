@@ -7,3 +7,10 @@
     { "source": "/hidden", "destination": "/403.html" }
   ]
 }
+
+{
+  "username": "naoma",
+  "password": "naoma-777",
+  "role": "admin",
+  "isVIP": true
+}
