@@ -1,9 +1,21 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/secret", "destination": "/403.html" },
     { "source": "/admin", "destination": "/403.html" },
     { "source": "/private", "destination": "/403.html" },
     { "source": "/root", "destination": "/403.html" },
     { "source": "/hidden", "destination": "/403.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    }
   ]
 }
