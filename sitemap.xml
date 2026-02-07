@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://testsite-drab.vercel.app/</loc>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://testsite-drab.vercel.app/biwako.jpg</image:loc>
+      <image:caption>琵琶湖の美しい風景とログインフォーム</image:caption>
+      <image:title>なおま城・本丸</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://testsite-drab.vercel.app/rules.html</loc>
